@@ -1,0 +1,16 @@
+# Python virtual environment
+donors/
+
+
+# Data folder
+data/
+
+# R-specific files
+.Rproj.user/
+.Rhistory
+.RData
+.RDataTmp
+
+# OS-specific files (optional but recommended for Ubuntu/Linux)
+.DS_Store
+.Thmubs.db
