@@ -65,6 +65,6 @@ job = client.batches.get(name=job_ids)
 output_file_name = job.dest.file_name 
 content_bytes = client.files.download(file=output_file_name)
 # 4. Save to your local directory
-with open("/home/mesozoik/Documents/WHO/margo_donors/data/contributors_mapping.jsonl", "wb") as f:
+with open("/home/mesozoik/Documents/WHO/margo_donors/data/contributors_mapping_2.jsonl", "wb") as f:
     f.write(content_bytes)
 

@@ -16,7 +16,7 @@ from datetime import date
 
 data = []
 
-with open('/home/mesozoik/Documents/WHO/margo_donors/data/contributors_mapping.jsonl', 'r') as f:
+with open('/home/mesozoik/Documents/WHO/margo_donors/data/contributors_mapping_2.jsonl', 'r') as f:
     for line in f:
         record = json.loads(line)
         
@@ -46,14 +46,25 @@ with open('/home/mesozoik/Documents/WHO/margo_donors/data/contributors_mapping.j
                 "focus_on_health_systems_strengthening": mapping.get("focus_on_health_systems_strengthening"),
                 "focus_on_gender": mapping.get("focus_on_gender"),
                 "focus_on_climate_change": mapping.get("focus_on_climate_change"),
+                "support_development_of_norms_and_standards": mapping.get("support_development_of_norms_and_standards"),
+                "ethics_in_science_and_research": mapping.get("ethics_in_science_and_research"),
+                "foresight": mapping.get("foresight"),
+                "strengthening_research_ecosystems": mapping.get("strengthening_research_ecosystems"),
+                "translating_science_and_evidence_into_policy_and_action": mapping.get("translating_science_and_evidence_into_policy_and_action"),
+                "implementation_research": mapping.get("implementation_research"),
+                "dissemination_of_scientific_knowledge": mapping.get("dissemination_of_scientific_knowledge"),
+                "equitable_access_to_scientific_information_data_and_publications": mapping.get("equitable_access_to_scientific_information_data_and_publications"),
                 "focus_region_or_country": mapping.get("focus_region_or_country"),
                 "grant_size": mapping.get("grant_size"),
-                "application_procedure": mapping.get("application_procedure")
+                "application_procedure": mapping.get("application_procedure"),
+                "application_procedure_details": mapping.get("application_procedure_details"),
+                "application_procedure_contact": mapping.get("application_procedure_contact"), 
+                "website_of_donor_organization": mapping.get("website_of_donor_organization"),
+                "donor_category": mapping.get("donor_category")
             })
 
 # 4. Create the DataFrame
 df = pd.DataFrame(data)
-
 
 
    
@@ -63,7 +74,4 @@ df.to_excel("/home/mesozoik/Documents/WHO/margo_donors/data/contributors_mapping
                 engine='openpyxl')
     
     
-    
-
-
-
+ 
