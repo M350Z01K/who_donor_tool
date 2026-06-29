@@ -1,6 +1,7 @@
 library(shiny)
 library(dplyr)
 library(DT)
+library(openxlsx)
 
 
 df_new = readRDS("contributors_mapping_results_processed.rds")
@@ -50,7 +51,8 @@ ui <- fluidPage(
         label = "Columns to display:",
         choices = col_display,
         selected = col_display[1:5] # Default check the first 5 columns
-      )
+      ), 
+      downloadButton("download_excel", "Download Dataset (.xlsx)")
       
     ),
     
@@ -121,6 +123,18 @@ server <- function(input, output, session) {
       rownames = FALSE            # Hides row numbers
     )
   })
+  
+  output$download_excel <- downloadHandler(
+    filename = function() {
+      # Changed extension to .xlsx
+      paste("data-export-", Sys.Date(), ".xlsx", sep = "")
+    },
+    content = function(file) {
+      # Use openxlsx::write.xlsx to write the reactive data to the temporary file
+      openxlsx::write.xlsx(filtered_data(), file, sheetName = "Exported Data", keepNA = FALSE)
+    }
+  )
+  
 }
 
 shinyApp(ui, server)

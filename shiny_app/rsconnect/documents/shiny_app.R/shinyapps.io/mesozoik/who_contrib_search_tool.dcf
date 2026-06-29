@@ -5,7 +5,7 @@ account: mesozoik
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 17562427
-bundleId: 12194122
+bundleId: 12195103
 url: https://mesozoik.shinyapps.io/who_contrib_search_tool/
 version: 1
 asMultiple: FALSE
