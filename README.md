@@ -20,17 +20,17 @@ Be aware that you will need to get an [API key](https://ai.google.dev/gemini-api
 
 The following scripts form the LLM pipeline that extract the data specified by the hardcoded prompt 
 
-- 1_bajob_create_json_prompt.py (contains the prompt)
-- 2_bajob_submit_job.py (batch submission to gemini)
-- 3_bajob_download_results.py (check and download the results if ready)
-- 4_bajob_results_extraction.py (conversion of the results in human-friendly form)
+- `1_bajob_create_json_prompt.py` (contains the prompt)
+- `2_bajob_submit_job.py` (batch submission to gemini)
+- `3_bajob_download_results.py` (check and download the results if ready)
+- `4_bajob_results_extraction.py` (conversion of the results in human-friendly form)
 
 
 ## Visualization via Shiny application
 
+- the script `process_mapping_results.R` cleans up the data for visualization. The script `shiny_app/shiny_app.R` builds the visualization tool.
 
-... to be completed
-
+The results can be visualized in form of filterable table under the following url: https://mesozoik.shinyapps.io/who_contrib_search_tool/
 
 ## Future improvements
 
